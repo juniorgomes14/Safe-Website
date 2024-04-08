@@ -1,0 +1,26 @@
+h3{
+    color: var(--light-gray);
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+.nav-links{
+    margin-right: 6rem;
+}
+.button-link{
+    color: var(--light-gray);
+    margin: 1rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: .8s;
+}
+.button-link:hover{
+    color: var(--blue);
+}
