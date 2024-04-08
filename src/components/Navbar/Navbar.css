@@ -2,16 +2,19 @@ h3{
     color: var(--light-gray);
 }
 nav{
+    position: absolute;
+    top:0;
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 2rem;
     align-items: center;
+    z-index: 2;
 }
-.nav-links{
+/* .nav-links{
     margin-right: 6rem;
-}
+} */
 .button-link{
     color: var(--light-gray);
     margin: 1rem;
