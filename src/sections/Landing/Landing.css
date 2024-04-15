@@ -1,0 +1,161 @@
+#landing{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.landing-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    gap: 5rem;
+}
+.background-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.texts{
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    width: 38rem;
+    height: 60%;
+}
+.title{
+    color: var(--blue);
+    font-size: 3.5em;
+    margin: 0;
+    line-height: 3.5rem;
+}
+.description{
+    margin-top: 1rem;
+    color: var(--light-gray);
+    font-size: 1.3em;
+}
+
+.cta-button{
+    color:var(--light-gray);
+    font-size: 1em;
+    font-weight: 600;
+    width: 12rem;
+    background-color: var(--blue);
+    padding: .8rem;
+    border-radius: 2rem;
+    border: none;
+    transition: .5s;
+    outline: .2rem solid var(--blue);;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+.cta-button:hover{
+    background-color: transparent;
+}
+
+.service-images{
+    z-index: 2;
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.top-images{
+height: 50%;
+}
+.top-images img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.bottom-images{
+    height: 50%;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.bottom-images .right{
+    width: 50%;
+    height: 100%;
+}
+.bottom-images .left{
+    width: 50%;
+    height: 100%;
+}
+     
+.bottom-images img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 3rem;
+}
+.bottom-images img:hover{
+    cursor: pointer;
+}
+@media screen and (max-width: 900px){
+    .landing-container{
+        gap: 0em;
+        padding: 2rem;
+    }
+    .service-images{
+        height: 50%;
+        gap: .5rem;
+    }
+    .bottom-images{
+        gap: .5rem;
+
+    }
+    .texts{
+        width: 25rem;
+        padding-top: 1.5rem;
+    }
+    .title{
+        font-size: 2.5em;
+    }
+    .description{
+        font-size: 1em;
+    }
+    /* .cta-button{
+
+    } */
+
+}
+@media screen and (max-width: 600px){
+    #landing{
+        height: auto;
+    }
+    .landing-container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 5rem;
+        padding: 1rem;
+        gap: 2rem;
+    }
+    .texts{
+        padding-top: 0;
+        width: 100%;
+        height: 50%;
+    }
+    .service-images{
+        width: 100%;
+        height: 50%;
+    }
+    .top-images img{
+        border-radius: 0;
+
+    }
+    .bottom-images img{
+        border-radius: 0;
+    }
+    
+}

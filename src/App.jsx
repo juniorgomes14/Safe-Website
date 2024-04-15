@@ -1,8 +1,9 @@
 import "./App.css"
+import Landing from "./sections/Landing/Landing"
 function App() {
   return (
     <>
-      <h1>Safe</h1>
+   <Landing/>
     </>
   )
 }
