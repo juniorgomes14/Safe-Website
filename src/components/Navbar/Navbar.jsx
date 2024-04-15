@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Logo from "../../assets/logoSafe.png"
 import "./Navbar.css";
 
 function slideTo(componentID) {
@@ -10,7 +11,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo-container">
-        <h3>Safe</h3>
+        <img src={Logo} alt="logo" className="logo-icon"/>
       </div>
       <button
         className="toggle-menu"
