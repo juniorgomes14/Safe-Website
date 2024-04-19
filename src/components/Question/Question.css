@@ -64,9 +64,6 @@
     transform: scaleY(0);
     height: 0;
     opacity: 0;
-
-
-
 }
 .question-response p, .question-response-hidden p {
     color: var(--light-gray);
@@ -85,10 +82,18 @@
         width: 95%;
     }
     .question-title p, .question-title-open p{
-        font-size: 1em;
+        font-size: .9em;
     }
     .question-response p, .question-response-hidden p {
         color: var(--light-gray);
         font-size: .9em;
+    }
+    .arrow{
+        right: .2rem;
+        
+    }
+    .arrow-open{
+        right: .2rem;
+
     }
 }
