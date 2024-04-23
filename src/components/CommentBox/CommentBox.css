@@ -1,0 +1,44 @@
+.comment-container{
+    width:20rem;
+    max-width: 100%;
+    height: auto;
+    background-color: var(--dark-gray-1);
+    padding: 1rem;
+}
+.starts{
+    display: flex;
+    gap: .1rem;
+    margin-bottom: .3rem;
+}
+.starts img{
+    width: 1.2rem;
+}
+.comment-name{
+    color: var(--blue);
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.comment-description{
+    color: var(--light-gray);
+    font-size: 1em;
+}
+
+@media screen and (max-width: 900px){
+    .starts img{
+        width: 1rem;
+    }
+    .comment-name{
+        font-size: 1em;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+    .comment-name{
+        font-size: 1.2em;
+    }
+    .comment-description{
+        color: var(--light-gray);
+        font-size: 1em;
+    }
+}
