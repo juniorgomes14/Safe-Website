@@ -1,7 +1,7 @@
 import "./Services.css";
-import aluguerCarros from "../../assets/aluguerCarros.jpg";
-import guardarCasa from "../../assets/guardarCasa.jpg";
-import administracao from "../../assets/administracao.jpg";
+import aluguerCarros from "../../assets/car.jpg";
+import guardarCasa from "../../assets/house.jpg";
+import administracao from "../../assets/admin.jpg";
 
 const Services = () => {
   return (

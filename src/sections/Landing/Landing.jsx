@@ -1,8 +1,8 @@
 import Navbar from "../../components/Navbar/Navbar";
 import backgroundImage from "../../assets/safeBackground.jpg";
-import aluguerCarros from "../../assets/aluguerCarros.jpg";
-import guardarCasa from "../../assets/guardarCasa.jpg";
-import administracao from "../../assets/administracao.jpg";
+import carImage from "../../assets/car.jpg";
+import houseImage from "../../assets/house.jpg";
+import adminImage from "../../assets/admin.jpg";
 import "./Landing.css";
 
 function Landing() {
@@ -26,14 +26,14 @@ function Landing() {
         </div>
         <div className="service-images">
           <div className="top-images">
-            <img src={aluguerCarros} alt="aluguerCarros"></img>
+            <img src={carImage} alt="car-image"></img>
           </div>
           <div className="bottom-images">
             <div className="right">
-              <img src={guardarCasa} alt="aluguerCarros"></img>
+              <img src={houseImage} alt="house-image"></img>
             </div>
             <div className="left">
-              <img src={administracao} alt="aluguerCarros"></img>
+              <img src={adminImage} alt="admin-image"></img>
             </div>
           </div>
         </div>
