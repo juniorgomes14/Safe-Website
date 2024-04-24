@@ -7,6 +7,11 @@ function slideTo(componentID) {
 }
 const Navbar = () => {
   const [isMenuOpen, setMenuIsOpen] = useState(false);
+  
+  function toggleMenu(){
+    setMenuIsOpen(()=> !isMenuOpen)
+    console.log("open")
+  }
 
   return (
     <nav>
@@ -15,7 +20,7 @@ const Navbar = () => {
       </div>
       <button
         className="toggle-menu"
-        onClick={() => setMenuIsOpen(!isMenuOpen)}
+        onClick={toggleMenu}
       >
         <span className={!isMenuOpen ? "bar1" : "bar1-close"}></span>
         <span className={!isMenuOpen ? "bar2" : "bar2-close"}></span>
@@ -23,16 +28,16 @@ const Navbar = () => {
 
       </button>
       <div className={isMenuOpen ? "nav-links" : "nav-links nav-hidden"}>
-        <button className="button-link" onClick={slideTo("home")}>
+        <button className="button-link" onClick={()=>slideTo("home")}>
           Home
         </button>
-        <button className="button-link" onClick={slideTo("services")}>
+        <button className="button-link" onClick={()=>slideTo("services")}>
           Serviços
         </button>
-        <button className="button-link" onClick={slideTo("about")}>
+        <button className="button-link" onClick={()=>slideTo("about")}>
           Sobre
         </button>
-        <button className="button-link" onClick={slideTo("fqa")}>
+        <button className="button-link" onClick={()=>slideTo("faq")}>
           FQA
         </button>
       </div>

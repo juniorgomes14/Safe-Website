@@ -1,0 +1,99 @@
+.question{
+    width: 60%;
+    position: relative;
+    height: auto;
+}
+.question-title-open{
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    border: 2px solid var(--blue);
+    border-radius: .2rem .2rem 0rem 0rem;
+    padding: .5rem;
+    border-bottom: none;
+    transition: .5s;
+}
+.question-title{
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    border: 2px solid var(--blue);
+    border-radius: .2rem;
+    padding: .5rem;
+    transition: .5s;
+}
+.question-title p, .question-title-open p{
+    color: var(--light-gray);
+    font-size: 1.2em;
+}
+
+.arrow{
+    width: 3rem;
+    position: absolute;
+    top: 0;
+    right: .5rem;
+    cursor: pointer;
+    transition: .5s;
+}
+.arrow-open{
+    width: 3rem;
+    position: absolute;
+    top: 0;
+    right: .5rem;
+    cursor: pointer;
+    transition: .5s;
+    transform: rotate(180deg);
+}
+.question-response{
+    min-height: 3rem;
+    height: auto;
+    background-color: var(--dark-gray-1);
+    border: 2px solid var(--blue);
+    border-top: none;
+    border-radius: 0rem 0rem .2rem .2rem;
+    transition: .5s;
+}
+.question-response-hidden{
+    height: auto;
+    background-color: var(--dark-gray-1);
+    border: 2px solid var(--blue);
+    border-top: none;
+    border-radius: 0rem 0rem .2rem .2rem;
+    transition: .5s;
+    transform-origin: top center;
+    transform: scaleY(0);
+    height: 0;
+    opacity: 0;
+}
+.question-response p, .question-response-hidden p {
+    color: var(--light-gray);
+    font-size: 1;
+    padding: .5rem;
+}
+
+
+@media screen and (max-width: 900px){
+    .question{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 600px){
+    .question{
+        width: 95%;
+    }
+    .question-title p, .question-title-open p{
+        font-size: .9em;
+    }
+    .question-response p, .question-response-hidden p {
+        color: var(--light-gray);
+        font-size: .9em;
+    }
+    .arrow{
+        right: .2rem;
+        
+    }
+    .arrow-open{
+        right: .2rem;
+
+    }
+}
