@@ -1,0 +1,23 @@
+#about{
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    flex-direction: column;
+}
+
+.team-members{  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 90%;
+    gap: 3rem;
+}
+.about-title{
+    color: var(--blue);
+    font-size: 2.5em;
+    margin-top: -1rem;
+}

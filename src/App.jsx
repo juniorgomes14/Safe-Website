@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./sections/About/About";
 import CallToAction from "./sections/CallToAction/CallToAction";
 import Comments from "./sections/Comments/Comments";
 import FAQ from "./sections/FAQ/FAQ";
@@ -11,6 +12,7 @@ function App() {
       <Services />
       <CallToAction />
       <Comments />
+      <About />
       <FAQ />
     </>
   );
