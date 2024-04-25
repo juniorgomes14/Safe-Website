@@ -2,15 +2,18 @@ import { useState } from "react";
 import Logo from "../../assets/logoSafe.png"
 import "./Navbar.css";
 
-function slideTo(componentID) {
-  document.getElementById(componentID)?.scrollIntoView({ behavior: "smooth" });
-}
+
 const Navbar = () => {
   const [isMenuOpen, setMenuIsOpen] = useState(false);
+
+  function slideTo(componentID) {
+    document.getElementById(componentID)?.scrollIntoView({ behavior: "smooth" });
+    setMenuIsOpen(false);
+  }
   
   function toggleMenu(){
     setMenuIsOpen(()=> !isMenuOpen)
-    console.log("open")
+    
   }
 
   return (
