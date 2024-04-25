@@ -22,3 +22,24 @@
     color: var(--light-gray);
     font-size: 1em;
 }
+
+@media screen and (max-width: 900px){
+    .team-member img{
+        width: 70%;
+    }
+    .member-name{
+        font-size: 1.2em;
+    }
+    .member-description{
+        font-size: .9em;
+    }
+    
+
+}
+
+@media screen and (max-width: 600px){
+    .team-member img{
+        width: 70%;
+        border-radius: 2rem;
+    }
+}
