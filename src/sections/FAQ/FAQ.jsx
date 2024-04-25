@@ -7,9 +7,6 @@ const FAQ = () => {
     <section id="faq">
         <Question/>
         <Question/>
-        <Question/>
-        <Question/>
-        <Question/>
     </section>
   )
 }

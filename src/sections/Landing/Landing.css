@@ -73,7 +73,6 @@ height: 50%;
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 3rem;
     cursor: pointer;
 }
 .bottom-images{
@@ -96,7 +95,7 @@ height: 50%;
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 3rem;
+
 }
 .bottom-images img:hover{
     cursor: pointer;
