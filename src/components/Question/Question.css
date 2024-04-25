@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
 }
 .question-title{
     display: flex;
@@ -25,7 +26,6 @@
     position: absolute;
     top: .5;
     right: .5rem;
-    cursor: pointer;
     transition: .5s;
 }
 .arrow-open{
@@ -33,7 +33,6 @@
     position: absolute;
     top: .5;
     right: .5rem;
-    cursor: pointer;
     transition: .5s;
     transform: rotate(180deg);
 }
