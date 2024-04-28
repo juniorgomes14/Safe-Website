@@ -1,0 +1,119 @@
+.footer{
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+.social-media-container{
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    gap: .5rem;
+    margin-right: 8%;
+}
+.logo-icon-footer{
+    width: 40%;
+}
+.footer-description{
+    color: var(--light-gray);
+    margin-left: .25rem;
+    font-size: 1.2em;
+}
+.social-media-links{
+    margin-top: .5rem;
+    display: flex;
+    gap: .5rem
+}
+
+.website-tree{
+   display: flex;
+   flex-direction: column;
+}
+.footer-title{
+    color: var(--light-gray);
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+.tree-nodes{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.tree-nodes p{
+    cursor: pointer;
+    transition: .5s;
+    color: var(--light-gray);
+    fill: var(--light-gray);
+    font-size: 1.2em;
+}
+.tree-nodes p:hover{
+    color: var(--blue);
+    fill: var(--blue);
+}
+.tree-nodes .dot{
+    opacity: 0;
+}
+.copyrights{
+    position: absolute;
+    color: var(--light-gray);
+    bottom: .1rem;
+    font-size: 1em;
+}
+
+@media screen and (max-width: 900px){
+    .footer{
+        gap: 1rem;
+    }
+    .social-media-container{
+        margin-right: 5%;
+    }
+    .social-media-container{
+        width: 15rem;
+    }
+    .footer-title{
+        font-size: 1.2em;
+    }
+    .tree-nodes p{
+        font-size: 1;
+    }
+    .copyrights{
+        font-size: .9em;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+    .footer{
+        flex-direction: column;
+        height: auto;
+        padding: .5rem 1.5rem;
+    }
+    .social-media-container{
+        width: 100%;
+        margin-right: 0%;
+    }
+    .logo-icon-footer{
+        width: 25%;
+    }
+    .website-tree{
+        width: 100%;
+        height: auto;
+    }
+    .tree-nodes{
+        flex-direction: column;
+        flex-wrap: wrap;
+
+    }
+    .contact-tree{
+        width: 100%;
+    }
+
+
+
+}
