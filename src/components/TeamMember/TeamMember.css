@@ -38,8 +38,26 @@
 }
 
 @media screen and (max-width: 600px){
-    .team-member img{
-        width: 70%;
-        border-radius: 2rem;
+    .team-member{
+        flex-direction: row;
+        width: 100%;
+        height: 8rem;
+        gap: 1rem;
     }
+    .member-info{
+        height: 100%;
+        padding-top: .5rem;
+    }
+    .team-member img{
+        border-radius: 50%;
+        width: 8rem;
+    }
+    .member-name{
+        text-align: left;
+
+    }
+    .member-description{
+        text-align: left;
+    }
+    
 }
