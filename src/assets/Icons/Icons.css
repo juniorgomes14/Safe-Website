@@ -1,0 +1,25 @@
+.social-link{
+    fill: var(--light-gray);
+    height: 3rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.social-link:hover{
+    fill: var(--blue);
+}
+.linkedIn{
+    height: 3.15rem;
+}
+.contact-icons{
+    fill: inherit;
+    height: 1.2rem;
+    margin-right: .5rem;
+    transform: translate(0%,25%);
+}
+.up-arrow{
+    fill: inherit;
+    transform: rotate(180deg);
+    height: 1.3rem;
+    width: 1.3rem;
+}
