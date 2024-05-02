@@ -5,6 +5,7 @@ import Comments from "./sections/Comments/Comments";
 import FAQ from "./sections/FAQ/FAQ";
 import Landing from "./sections/Landing/Landing";
 import Services from "./sections/Services/Services";
+import Footer from "./sections/Footer/Footer"
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       <Comments />
       <About />
       <FAQ />
+      <Footer/>
     </>
   );
 }
