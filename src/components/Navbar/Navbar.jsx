@@ -31,7 +31,7 @@ const Navbar = () => {
 
       </button>
       <div className={isMenuOpen ? "nav-links" : "nav-links nav-hidden"}>
-        <button className="button-link" onClick={()=>slideTo("home")}>
+        <button className="button-link" onClick={()=>slideTo("landing")}>
           Home
         </button>
         <button className="button-link" onClick={()=>slideTo("services")}>

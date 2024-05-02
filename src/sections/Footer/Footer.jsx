@@ -9,6 +9,11 @@ import Phone from "../../assets/Icons/Phone";
 import Mail from "../../assets/Icons/Mail";
 
 const Footer = () => {
+  function slideTo(componentID) {
+    document.getElementById(componentID)?.scrollIntoView({ behavior: "smooth" });
+    setMenuIsOpen(false);
+  }
+
   return (
     <section className="footer">
       <div className="social-media-container">
@@ -25,10 +30,10 @@ const Footer = () => {
         <div className="website-tree">
           <p className="footer-title">Site</p>
           <div className="tree-nodes">
-            <p>Home</p>
-            <p>Serviços</p>
-            <p>Sobre</p>
-            <p>FQA</p>
+            <p onClick={() => slideTo("landing")}>Home</p>
+            <p onClick={() => slideTo("services")}>Serviços</p>
+            <p onClick={() => slideTo("about")} >Sobre</p>
+            <p onClick={() => slideTo("faq")}>FQA</p>
           </div>
         </div>
         <div className="contact-tree">
