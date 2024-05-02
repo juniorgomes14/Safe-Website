@@ -16,11 +16,9 @@ function Landing() {
           alt="background"
         ></img>
         <div className="texts">
-          <h1 className="title">Este titulo é um teste e mais alguma coisa</h1>
+          <h1 className="title">Seus bens estão seguros em mãos confiáveis.</h1>
           <p className="description">
-            Lorem ipsum dolor sit amet consectetur. Amet diam nulla eu dolor
-            phasellus vitae dictumst tellus pellentesque. Egestas quis amet
-            nunc.
+          Imigrante e preocupado com a segurança dos seus bens em Cabo Verde? Nós garantimos cuidados completos, incluindo segurança, manutenção e limpeza.
           </p>
           <button className="cta-button">Contactar Agora</button>
         </div>
