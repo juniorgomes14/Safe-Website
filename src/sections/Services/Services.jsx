@@ -14,33 +14,29 @@ const Services = () => {
           <div className="services-right">
             <h2 className="services-title">Guardamos sua casa</h2>
             <p className="services-description">
+              Serviços de pequenas obras de remodelação e reparação de casa e apartamentos; Segurança e limpeza, pagamento de impostos,
+
+            </p>
+            {/* <p className="services-description">
               Lorem ipsum dolor sit amet consectetur. Nulla adipiscing cras in
               felis viverra id congue odio id. Mauris enim nisl proin eu odio
               mollis enim cras placerat. Varius non nunc odio at amet orci amet
               eu purus. Nam semper arcu dolor cursus facilisi interdum.
-            </p>
-            <p className="services-description">
-              Lorem ipsum dolor sit amet consectetur. Nulla adipiscing cras in
-              felis viverra id congue odio id. Mauris enim nisl proin eu odio
-              mollis enim cras placerat. Varius non nunc odio at amet orci amet
-              eu purus. Nam semper arcu dolor cursus facilisi interdum.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="car-guard">
           <div className="services-left">
-            <h2 className="services-title">Guardamos sua casa</h2>
+            <h2 className="services-title">Serviço Auto</h2>
             <p className="services-description">
-              Lorem ipsum dolor sit amet consectetur. Nulla adipiscing cras in
-              felis viverra id congue odio id. Mauris enim nisl proin eu odio
-              mollis enim cras placerat. Varius non nunc odio at amet orci amet
-              eu purus. Nam semper arcu dolor cursus facilisi interdum.
+            Compra de venda de automóveis; Limpeza; pagamento de impostos e seguros; manutenção; 
+
             </p>
             <p className="services-description">
-              Lorem ipsum dolor sit amet consectetur. Nulla adipiscing cras in
+              {/* Lorem ipsum dolor sit amet consectetur. Nulla adipiscing cras in
               felis viverra id congue odio id. Mauris enim nisl proin eu odio
               mollis enim cras placerat. Varius non nunc odio at amet orci amet
-              eu purus. Nam semper arcu dolor cursus facilisi interdum.
+              eu purus. Nam semper arcu dolor cursus facilisi interdum. */}
             </p>
           </div>
           <div className="services-right">
@@ -48,23 +44,21 @@ const Services = () => {
           </div>
         </div>
         <div className="administration-work">
-        <div className="services-left">
+          <div className="services-left">
             <img src={administracao} alt="administrativo"></img>
           </div>
           <div className="services-right">
-            <h2 className="services-title">Guardamos sua casa</h2>
+            <h2 className="services-title">Serviço administrativos e secretariado</h2>
             <p className="services-description">
+            Administração de folhas de pagamentos e benefícios, preparação de documentos, organização de arquivos, redação de documentos; Orientação na elaboração de documentos fundamentais do pedido de pensão;
+
+            </p>
+            {/* <p className="services-description">
               Lorem ipsum dolor sit amet consectetur. Nulla adipiscing cras in
               felis viverra id congue odio id. Mauris enim nisl proin eu odio
               mollis enim cras placerat. Varius non nunc odio at amet orci amet
               eu purus. Nam semper arcu dolor cursus facilisi interdum.
-            </p>
-            <p className="services-description">
-              Lorem ipsum dolor sit amet consectetur. Nulla adipiscing cras in
-              felis viverra id congue odio id. Mauris enim nisl proin eu odio
-              mollis enim cras placerat. Varius non nunc odio at amet orci amet
-              eu purus. Nam semper arcu dolor cursus facilisi interdum.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

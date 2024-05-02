@@ -6,6 +6,14 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin: 5rem 0rem;
     transform: 1s;
+    padding-top: 5rem;
+    margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 600px){
+    #faq{
+        padding-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
 }
