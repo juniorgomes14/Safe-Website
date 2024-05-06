@@ -11,7 +11,7 @@ nav{
     z-index: 3;
 }
 .logo-icon{
-    width: 5.5rem;
+    height: 2rem;
     transform: translate(0%,-10%);
 }
 /* .nav-links{
