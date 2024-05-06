@@ -7,7 +7,7 @@ const CallToAction = () => {
         <h2 className="action-title">Proteja seu bens em segurança agora </h2>
         <div className="call-to-action-container"></div>
         <p className="action-description">Lorem ipsum dolor sit amet consectetur. Nulla adipiscing cras in felis viverra id congue odio id. </p>
-        <button className="cta-button-wite">Contactar Agora</button>
+        <button className="cta-button-white"><a href="https://wa.me/2389725617" className="link" target="blank">Contactar Agora</a></button>
       <img src={BackGroundImage} alt='back-ground-image'/>
     </section>
   )

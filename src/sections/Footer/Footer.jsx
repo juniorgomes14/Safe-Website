@@ -40,8 +40,8 @@ const Footer = () => {
           <p className="footer-title">Contatos</p>
           <div className="tree-nodes">
             <p><Location/>Mindelo, São Vicente, Cabo Verde</p>
-            <p><Phone/>+238 999999999</p>
-            <p><Mail/>safe@safe.cv</p>
+            <p><Phone/>+238 972 56 17</p>
+            <p><Mail/>safe@safesolutions.cv</p>
             <p className="dot">.</p>
           </div>
         </div>

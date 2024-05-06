@@ -20,7 +20,7 @@ function Landing() {
           <p className="description">
           Imigrante e preocupado com a segurança dos seus bens em Cabo Verde? Nós garantimos cuidados completos, incluindo segurança, manutenção e limpeza.
           </p>
-          <button className="cta-button">Contactar Agora</button>
+          <button className="cta-button"> <a href="https://wa.me/2389725617" className="link" target="blank">Contactar Agora</a> </button>
         </div>
         <div className="service-images">
           <div className="top-images">

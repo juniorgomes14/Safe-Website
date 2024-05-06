@@ -17,6 +17,12 @@
     z-index: 1;
 }
 
+.call-to-action .link{
+    text-decoration: none;
+    color:inherit;
+
+}
+
 .action-title{
     color: var(--light-gray);
     font-size: 2.5em;
@@ -30,7 +36,7 @@
     text-align: center;
     z-index: 2;
 }
-.cta-button-wite{
+.cta-button-white{
     color:var(--blue);
     font-size: 1em;
     font-weight: 600;
@@ -45,7 +51,7 @@
     margin-top: 2rem;
     z-index: 2;
 }
-.cta-button-wite:hover{
+.cta-button-white:hover{
     background-color: transparent;
     color:var(--light-gray);
 }
