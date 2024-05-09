@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="tree-nodes">
             <p><Location/>Mindelo, São Vicente, Cabo Verde</p>
             <p><Phone/>+238 972 56 17</p>
-            <p><Mail/>safe@safesolutions.cv</p>
+            <p><Mail/>safe@safesolution.cv</p>
             <p className="dot">.</p>
           </div>
         </div>
