@@ -18,7 +18,7 @@ function Landing() {
         <div className="texts">
           <h1 className="title">Seus bens estão seguros em mãos confiáveis.</h1>
           <p className="description">
-          Imigrante e preocupado com a segurança dos seus bens em Cabo Verde? Nós garantimos cuidados completos, incluindo segurança, manutenção e limpeza.
+          Emigrante e preocupado com a segurança dos seus bens em Cabo Verde? Nós garantimos cuidados completos, incluindo segurança, manutenção e limpeza.
           </p>
           <button className="cta-button"> <a href="https://wa.me/2389725617" className="link" target="blank">Contactar Agora</a> </button>
         </div>
