@@ -76,9 +76,11 @@
 @media screen and (max-width: 600px){
     .question-container{
         width: 95%;
+       
     }
     .question-title{
         font-size: .9em;
+        height: auto;
     }
     .question-response-text{
         color: var(--light-gray);
@@ -86,10 +88,12 @@
     }
     .arrow{
         right: .2rem;
+        display: none;
         
     }
     .arrow-open{
         right: .2rem;
+        display: none;
 
     }
 }
