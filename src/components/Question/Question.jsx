@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Arrow from "../../assets/arrow.png"
 import "./Question.css"
 
-const Question = () => {
+const Question = ({title, response}) => {
     const [isOpen,setIsOpen] = useState(false);
     
     function toggleOpen(){
@@ -12,11 +12,11 @@ const Question = () => {
   return (
     <div className="question-container" onClick={toggleOpen}>
         <div className="question-title">
-            <p className="question">Essa é uma pergunta sobre alguma coisa</p>
+            <p className="question">{title}</p>
             <img className={isOpen?"arrow-open":"arrow"} src={Arrow} alt="arrow"/>
         </div>
         <div className={isOpen?"question-response": "question-response-hidden"}>
-            <p className="question-response-text">Isso é a resposta para alguma questão que ja foi feita Isso é a resposta para alguma questão que ja foi feitaIsso é a resposta para alguma questão que ja foi feitaIsso é a resposta para alguma questão que ja foi feitaIsso é a resposta para alguma questão que ja foi feita</p>
+            <p className="question-response-text">{response}</p>
         </div>
         
     </div>
