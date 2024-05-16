@@ -6,14 +6,15 @@ import Landing from "./sections/Landing/Landing";
 import Services from "./sections/Services/Services";
 import Footer from "./sections/Footer/Footer"
 import ScrollUpButton from "./components/ScrollUpButton/ScrollUpButton"
+import About from "./sections/About/About"
 function App() {
   return (
     <>
       <Landing />
       <Services />
       <CallToAction />
-      <Comments />
-      {/* <About /> */}
+      {/* <Comments /> */}
+      <About />
       <FAQ />
       <Footer/>
       <ScrollUpButton/>
