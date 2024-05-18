@@ -23,7 +23,7 @@
 }
 .about-description{
     color: var(--light-gray);
-    max-width: 55rem;
+    max-width: 60%;
     padding: 1rem;
     font-size: 1.2em;
 }
@@ -36,6 +36,10 @@
     .team-members{
         gap: 2rem;
     }
+    .about-description{
+        max-width: 90%;
+    
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -46,5 +50,6 @@
     }
     .about-description{
         font-size: 1em;
+        max-width: 95%;
     }
 }
