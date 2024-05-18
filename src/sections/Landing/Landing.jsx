@@ -1,8 +1,8 @@
 import Navbar from "../../components/Navbar/Navbar";
-import backgroundImage from "../../assets/safeBackground.jpg";
-import carImage from "../../assets/car.jpg";
-import houseImage from "../../assets/house.jpg";
-import adminImage from "../../assets/admin.jpg";
+import backgroundImage from "../../assets/safeBackground.webp";
+import carImage from "../../assets/car.webp";
+import houseImage from "../../assets/house.webp";
+import adminImage from "../../assets/admin.webp";
 import "./Landing.css";
 
 function Landing() {

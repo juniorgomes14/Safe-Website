@@ -1,7 +1,7 @@
 import "./Services.css";
-import aluguerCarros from "../../assets/car.jpg";
-import guardarCasa from "../../assets/house.jpg";
-import administracao from "../../assets/admin.jpg";
+import aluguerCarros from "../../assets/car.webp";
+import guardarCasa from "../../assets/house.webp";
+import administracao from "../../assets/admin.webp";
 
 const Services = () => {
   return (

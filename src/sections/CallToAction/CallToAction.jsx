@@ -1,4 +1,4 @@
-import BackGroundImage from "../../assets/background-call-to-action.jpg"
+import BackGroundImage from "../../assets/background-call-to-action.webp"
 import "./CallToAction.css"
 
 const CallToAction = () => {
