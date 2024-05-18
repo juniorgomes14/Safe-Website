@@ -6,6 +6,9 @@ import adminImage from "../../assets/admin.webp";
 import "./Landing.css";
 
 function Landing() {
+  function RedirectToContact(){
+    window.open('https://wa.me/2389725617', '_blank');
+  }
   return (
     <div id="landing">
       <Navbar />
@@ -20,7 +23,7 @@ function Landing() {
           <p className="description">
           Emigrante e preocupado com a segurança dos seus bens em Cabo Verde? Nós garantimos cuidados completos, incluindo segurança, manutenção e limpeza.
           </p>
-          <button className="cta-button"> <a href="https://wa.me/2389725617" className="link" target="blank">Contactar Agora</a> </button>
+          <button className="cta-button" onClick={RedirectToContact}>Contactar Agora </button>
         </div>
         <div className="service-images">
           <div className="top-images">
