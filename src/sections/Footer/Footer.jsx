@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import Logo from "../../assets/logoSafe.png";
+import Logo from "../../assets/logoSafe.webp";
 import Facebook from "../../assets/Icons/Facebook";
 import Instagram from "../../assets/Icons/Instagram";
 import LinkedIn from "../../assets/Icons/LinkedIn";
@@ -45,7 +45,7 @@ const Footer = () => {
             <p className="dot">.</p>
           </div>
         </div>
-        <p className="copyrights">© 2024 Safe. All Rights Reserved. Powered by Nuno Lima</p>
+        <p className="copyrights">© 2024 Safe. All Rights Reserved. Powered by <a href="https://nunolima.netlify.app/" target="blank">Nuno Lima</a></p>
     </section>
   );
 };
