@@ -66,6 +66,14 @@
     bottom: .1rem;
     font-size: 1em;
 }
+.copyrights a{
+    text-decoration: none;
+    font-size:inherit;
+    color: var(--light-gray);
+}
+.copyrights a:hover{
+    color: var(--blue);
+}
 
 @media screen and (max-width: 900px){
     .footer{

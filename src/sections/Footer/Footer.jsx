@@ -45,7 +45,7 @@ const Footer = () => {
             <p className="dot">.</p>
           </div>
         </div>
-        <p className="copyrights">© 2024 Safe. All Rights Reserved. Powered by Nuno Lima</p>
+        <p className="copyrights">© 2024 Safe. All Rights Reserved. Powered by <a href="https://nunolima.netlify.app/" target="blank">Nuno Lima</a></p>
     </section>
   );
 };
