@@ -70,6 +70,7 @@
     text-decoration: none;
     font-size:inherit;
     color: var(--light-gray);
+    transition: .5s;
 }
 .copyrights a:hover{
     color: var(--blue);

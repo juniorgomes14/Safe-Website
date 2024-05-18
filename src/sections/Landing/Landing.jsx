@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar/Navbar";
-import backgroundImage from "../../assets/safeBackground.webp";
+import backgroundImage from "../../assets/safeBackground.jpg";
 import carImage from "../../assets/car.webp";
 import houseImage from "../../assets/house.webp";
 import adminImage from "../../assets/admin.webp";
