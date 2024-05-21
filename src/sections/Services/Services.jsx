@@ -56,7 +56,7 @@ const Services = () => {
               Serviço Administrativos e Secretariado
             </h2>
             <p className="services-description">
-              Serviços administrativos e secretariadofazemos dos seus serviços
+              Serviços administrativos e secretariado, fazemos dos seus serviços
               administrativos e assuntos bases do setor financeiro nossa
               responsabilidade.
             </p>
@@ -64,10 +64,10 @@ const Services = () => {
               Pagamento de impostos, declaração contribuição segurança social,
               elaboração de contratos dos funcionários, mapa de férias,
               processamento de salário, emissão do mapa do seguro obrigatório de
-              acidente do treabalho, todos os serviços de competência da
+              acidente do trabalho, todos os serviços de competência da
               conservatória dos registos comercial. organização de arquivos,
               redação de documentos. orientação na elaboração de documentos
-              fundamentais do pedido de pensão. co0nte connosco.
+              fundamentais do pedido de pensão. Conte connosco.
             </p>
           </div>
         </div>
