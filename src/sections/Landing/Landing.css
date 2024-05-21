@@ -46,7 +46,8 @@
     font-weight: 600;
     width: 12rem;
     background-color: var(--blue);
-    padding: .8rem;
+    /* padding: .8rem; */
+    height: 3rem;
     border-radius: 2rem;
     border: none;
     transition: .5s;
@@ -58,10 +59,6 @@
     background-color: transparent;
 }
 
-.cta-button .link{
-    text-decoration: none;
-    color:inherit
-}
 
 .service-images{
     z-index: 2;
