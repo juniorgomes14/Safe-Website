@@ -16,16 +16,16 @@ const Services = () => {
             <p className="services-description">
               Se tem ou deseja comprar ou arrendar um imóvel em Cabo Verde, a
               Safe Solution cria a solução perfeita para si de acordo com as
-              suas expetativas e necessidades. garantimos, com segurança, todos
+              suas expetativas e necessidades. Garantimos, com segurança, todos
               os serviços da competência da conservatória dos registos predial.
             </p>
             <p className="services-description">
               {" "}
-              Manutenção e limpeza do imóvel. obras de manutenção e reparação do
+              Manutenção e limpeza do imóvel. Obras de manutenção e reparação do
               imóvel: canalização, electricidade, pinturas, serralheiras,
-              carpintaria. instalação ou substituição de tanques. segurança do
-              imóvel. resolvemos os problemas de inflitração. remodelação de
-              casas de banho, cozinhas. reformas ao gosto do cliente.
+              carpintaria. instalação ou substituição de tanques. Segurança do
+              imóvel. Resolvemos os problemas de inflitração. Remodelação de
+              casas de banho, cozinhas. Reformas ao gosto do cliente.
             </p>
           </div>
         </div>
@@ -38,8 +38,8 @@ const Services = () => {
             </p>
             <p className="services-description">
               Ajudamos com o despacho, todos os serviços da competência da
-              conservatória dos registos autómovel. encontramos o melhor seguro
-              para si, manutenção e limpeza em dia. compra ou venda do
+              conservatória dos registos autómovel. Encontramos o melhor seguro
+              para si, manutenção e limpeza em dia. Compra ou venda do
               automóveis.
             </p>
           </div>
@@ -65,8 +65,8 @@ const Services = () => {
               elaboração de contratos dos funcionários, mapa de férias,
               processamento de salário, emissão do mapa do seguro obrigatório de
               acidente do trabalho, todos os serviços de competência da
-              conservatória dos registos comercial. organização de arquivos,
-              redação de documentos. orientação na elaboração de documentos
+              conservatória dos registos comercial. Organização de arquivos,
+              redação de documentos. Orientação na elaboração de documentos
               fundamentais do pedido de pensão. Conte connosco.
             </p>
           </div>
