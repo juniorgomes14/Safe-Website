@@ -15,7 +15,7 @@ const FAQ = () => {
       />
       <Question
         title={
-          "Quais são os serviços oferecidos pela safe solution cv para a manutenção da casa?"
+          "Quais são os serviços oferecidos pela Safe Solution para a manutenção da casa?"
         }
         response={
           "A Safe Solution oferece uma grande diversidade de servços no âmbito da manutenção de casas, desde a renovação de pinturas internas e externas, canalização, instalação ou substituição de tanques, electricidade e inflitração, entre outros."

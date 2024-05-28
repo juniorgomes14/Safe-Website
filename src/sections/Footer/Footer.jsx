@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="social-media-container">
         <img src={Logo} alt="logo" className="logo-icon-footer" />
         <p className="footer-description">
-        De Cabo Verde para a mundo: criamos soluções seguras. garantimos serviços completos de proteção, manutenção e limpeza para seus bens.
+        De França e Cabo Verde para a mundo: criamos soluções seguras. Garantimos serviços completos de proteção, manutenção e limpeza para seus bens.
         </p>
         <div className="social-media-links">
           <Facebook />
