@@ -23,7 +23,7 @@ const FAQ = () => {
       />
       <Question
         title={
-          "Sou emigrante da frança e quero adquirir um apartamento em cabo verde."
+          "Sou emigrante da França e quero adquirir um apartamento em Cabo Verde."
         }
         response={
           "A Safe Solution encontre o apartamento perfeito para si, com indicações específicas da localização, dimensão, preço da sua preferência."
