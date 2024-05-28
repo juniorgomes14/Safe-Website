@@ -17,7 +17,7 @@ const Services = () => {
               Se tem ou deseja comprar ou arrendar um imóvel em Cabo Verde, a
               Safe Solution cria a solução perfeita para si de acordo com as
               suas expetativas e necessidades. Garantimos, com segurança, todos
-              os serviços da competência da conservatória dos registos predial.
+              os serviços da competência da Conservatória dos Registos Predial.
             </p>
             <p className="services-description">
               {" "}
@@ -33,12 +33,12 @@ const Services = () => {
           <div className="services-left">
             <h2 className="services-title">Serviço Auto</h2>
             <p className="services-description">
-              Quer ter um carro em cabo verde para o seu conforto e deslocação
+              Quer ter um carro em Cabo Verde para o seu conforto e deslocação
               durante o período de férias, nos tratamos disso.
             </p>
             <p className="services-description">
               Ajudamos com o despacho, todos os serviços da competência da
-              conservatória dos registos autómovel. Encontramos o melhor seguro
+              Conservatória dos Registos Autómovel. Encontramos o melhor seguro
               para si, manutenção e limpeza em dia. Compra ou venda do
               automóveis.
             </p>
@@ -65,7 +65,7 @@ const Services = () => {
               elaboração de contratos dos funcionários, mapa de férias,
               processamento de salário, emissão do mapa do seguro obrigatório de
               acidente do trabalho, todos os serviços de competência da
-              conservatória dos registos comercial. Organização de arquivos,
+              Conservatória dos Registos Comercial. Organização de arquivos,
               redação de documentos. Orientação na elaboração de documentos
               fundamentais do pedido de pensão. Conte connosco.
             </p>
