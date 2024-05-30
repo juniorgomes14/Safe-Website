@@ -3,7 +3,7 @@ import "./CallToAction.css"
 
 const CallToAction = () => {
   function RedirectToContact(){
-    window.open('https://wa.me/2389725617', '_blank');
+    window.open('https://wa.me/2389853428', '_blank');
   }
   return (
     <section className="call-to-action">
