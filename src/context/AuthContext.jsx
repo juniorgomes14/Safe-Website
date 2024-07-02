@@ -12,20 +12,25 @@ export function useAuth() {
 function AuthProvider({ children }) {
   // const [userInfo, setUserInfo] = useState(null);
   const [token, setToken] = useState(null);
+ 
 
   useEffect(() => {
     const unsubscribe = FireBaseAuth.onAuthStateChanged(async (user) => {
-      const tokenUser = await user.getIdToken();
-
       if (user) {
-        const tokenUser = await user.getIdToken();
-        if (tokenUser) setToken(tokenUser);
+        try {
+          const tokenUser = await user.getIdToken();
+          if (tokenUser) {
+            setToken(tokenUser);
+          }
+        } catch (error) {
+          console.error('Error obtendo token:', error);
+        }
       } else {
-        setToken(null);
+        setToken(null); 
       }
     });
 
-    return unsubscribe;
+    return () => unsubscribe();
   }, []);
 
   async function loginAdmin(email, password) {
@@ -51,5 +56,6 @@ function AuthProvider({ children }) {
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+
 }
 export default AuthProvider;
