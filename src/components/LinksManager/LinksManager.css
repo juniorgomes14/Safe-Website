@@ -1,0 +1,13 @@
+.link-manager-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+.links-inputs-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+}

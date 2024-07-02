@@ -55,7 +55,8 @@ function AuthProvider({ children }) {
     token,
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  // return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return children
 
 }
 export default AuthProvider;
