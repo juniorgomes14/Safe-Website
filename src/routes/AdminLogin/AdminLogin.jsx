@@ -3,11 +3,10 @@ import backgroundImage from "../../assets/safeBackground.jpg";
 import "./AdminLogin.css";
 // import { useMutation } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IoIosEyeOff } from "react-icons/io";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { IoIosEye } from "react-icons/io";
+import { IoIosEye, IoIosEyeOff } from "react-icons/io";
+import { Navigate } from "react-router-dom";
 import { z } from "zod";
 import { useAuth } from "../../context/AuthContext";
 
@@ -20,8 +19,20 @@ const loginSchema = z.object({
 });
 
 const AdminLogin = () => {
-  const Auth = useAuth();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const { loading, user, loginUser } = useAuth()
+
+  if (loading) {
+    return (
+      <p>Carregado</p>
+    );
+  }
+
+  // If the user is already authenticated, redirect to the home page
+  if (user) {
+    return <Navigate to="/dashboard" />;
+  }
+
 
   
   const [showPassword, setShowPassword] = useState(false);
@@ -53,6 +64,8 @@ const AdminLogin = () => {
     navigate("/dashboard");
   }
 
+
+ 
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit(OnLogin)}>
