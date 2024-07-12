@@ -1,22 +1,24 @@
 
 .dashboard-container{
-    width: 100vw;
+    width: 100%;
     min-height: 100%;
     height: auto;
-    padding: 2rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    gap: 3rem;
 }
 .manager-title{
     color: var(--blue);
     font-size: 2em;
-    margin-top: -1rem;
 }
 .dashboard-label{
     display: flex;
     flex-direction: column;
     color: var(--light-gray);
     flex: 1 1 49%; 
+    max-height: 4rem;
 }
 
 .dashboard-input{
@@ -57,5 +59,10 @@
     top: 50%;
     right: .5rem;
     transform: translate(0,-50%);
+}
+
+.dashboard-error-message{
+    color: rgb(255, 76, 76);
+    font-size: .7em;
 }
 

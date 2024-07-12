@@ -1,11 +1,10 @@
+import { useMutation } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { CgSpinner } from "react-icons/cg";
 import { FaSave } from "react-icons/fa";
 import API, { parseAPIResponse } from "../../api/Api";
 import "./LinksManager.css";
-import { useEffect } from "react";
-import { useMutation } from "@tanstack/react-query";
-import { CgSpinnerAlt } from "react-icons/cg";
-import { CgSpinner } from "react-icons/cg";
 
 const LinksManager = () => {
   async function GetCurrentLinks() {

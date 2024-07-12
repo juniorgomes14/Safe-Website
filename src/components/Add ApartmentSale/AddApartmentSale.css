@@ -1,0 +1,28 @@
+.add-apartment-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+.add-form-container{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+}
+.images-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.description-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    overflow: auto;
+}
