@@ -1,6 +1,5 @@
 .image-thumbnails{
     width: 50%;
-    /* background-color: var(--dark-gray-1); */
     padding: 0 .5rem;
     display: flex;
     flex-direction: row;
@@ -12,8 +11,6 @@
 .apartment-image{
     position: relative;
     max-width: 32%;
-    /* max-width: 12rem;
-    max-height: 6.75rem; */
     flex-grow: 1;
     border-radius: .5rem;
     overflow: hidden;
@@ -27,9 +24,7 @@
 
 .apartment-image-actions{
     position: absolute;
-    /* bottom: .5rem;
-    right: .5rem; */
-     bottom: .5rem;
+    bottom: .5rem;
     right: -4rem;
     display: flex;
     gap: .2rem;
@@ -64,4 +59,23 @@
     width: 1.2rem;
     height: 1.2rem;
     color: var(--light-gray);
+}
+
+@media screen and (max-width: 900px){
+    .image-thumbnails{
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+    .image-thumbnails{
+        margin-top: 1rem;
+    }
+    .apartment-image{
+        max-width: 30%;
+    }
+
 }

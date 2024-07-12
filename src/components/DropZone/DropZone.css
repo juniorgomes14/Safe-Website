@@ -33,6 +33,7 @@
     fill: var(--light-gray);
     gap: 0.5rem;
     font-size: 1rem;
+    text-align: center;
   }
 
   .upload-icon{
@@ -40,15 +41,3 @@
     height: 2.5rem;
   }
   
-  /* @media screen and (max-width: 900px) {
-    .drop-zone {
-      width: 80%;
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .drop-zone {
-      width: 90%;
-      height: 20rem;
-    }
-  } */
