@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import Loading from "../Loading/Loading";
 
 
 const Protected = ({ children }) => {
   const { loading, user } = useAuth()
 
   if (loading) {
-    // return <span className="loading loading-dots loading-lg"></span>;
-    return <p>Carregado</p>
+    return <Loading/>
   }
 
   if (user) {
