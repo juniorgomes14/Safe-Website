@@ -9,6 +9,44 @@
     overflow: hidden;
     gap: 3rem;
 }
+
+.dashboard-header{
+    width: 100%;
+    display: flex;
+    color: var(--light-gray);
+justify-content: space-between;
+}
+
+.username{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.user-icon{
+    width: 2rem;
+    height: 2rem;
+}
+
+.logout-icon{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.logout-btn{
+    position: relative;
+    color:var(--light-gray);
+    background-color: transparent;
+    border: none;
+    transition: .5s;
+    cursor: pointer;
+    padding-left: .5rem;
+}
+.logout-btn:hover{
+    color: var(--blue);
+}
+
 .manager-title{
     color: var(--blue);
     font-size: 2em;

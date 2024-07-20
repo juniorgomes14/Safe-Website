@@ -1,14 +1,15 @@
-import Logo from "../../assets/logoSafe.webp";
-import backgroundImage from "../../assets/safeBackground.jpg";
-import "./AdminLogin.css";
-// import { useMutation } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { Navigate } from "react-router-dom";
 import { z } from "zod";
+import Logo from "../../assets/logoSafe.webp";
+import backgroundImage from "../../assets/safeBackground.jpg";
 import { useAuth } from "../../context/AuthContext";
+import Loading from "../Loading/Loading";
+import "./AdminLogin.css";
 
 const loginSchema = z.object({
   email: z
@@ -19,25 +20,14 @@ const loginSchema = z.object({
 });
 
 const AdminLogin = () => {
-  // const navigate = useNavigate();
-  const { loading, user, loginUser } = useAuth()
+  const { loading, user, loginUser } = useAuth();
 
-  if (loading) {
-    return (
-      <p>Carregado</p>
-    );
-  }
+  if (loading) return <Loading />;
 
-  // If the user is already authenticated, redirect to the home page
-  if (user) {
-    return <Navigate to="/dashboard" />;
-  }
+  if (user) return <Navigate to="/dashboard" />;
 
-
-  
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => setShowPassword(!showPassword);
-  const [loginError, setLoginError] = useState(null);
 
   const {
     register,
@@ -46,28 +36,26 @@ const AdminLogin = () => {
   } = useForm({
     resolver: zodResolver(loginSchema),
   });
-  // useEffect(() => {
-  //   async function LoginState() {
-
-  //     console.log(Auth.token)
-  //     if (Auth.token) return navigate("/dashboard", { replace: true });
-  //   }
-  //   LoginState();
-  // }, []);
 
   async function OnLogin(data) {
-    setLoginError(null);
-    const success = await Auth.loginAdmin(data.email, data.password);
+    const success = await loginUser(data.email, data.password);
 
-    if (!success) return setLoginError("O email ou password estão incorretos");
-
-    navigate("/dashboard");
+    if (!success) {
+      toast.error(`Email ou password estão incorretos`);
+    }
   }
 
-
- 
   return (
     <div className="login-container">
+      <Toaster
+        toastOptions={{
+          style: {
+            backgroundColor: "#303030",
+            padding: "16px",
+            color: "#D9D9D9",
+          },
+        }}
+      />
       <form className="login-form" onSubmit={handleSubmit(OnLogin)}>
         <img src={Logo} className="logo-login" alt="logo-login" />
         <label htmlFor="username">
@@ -94,12 +82,6 @@ const AdminLogin = () => {
             </span>
           )}
         </label>
-        {loginError && (
-          <p className="login-error-message">
-            Email ou password estão incorretos
-          </p>
-        )}
-
         <button className="enter-button">Entrar</button>
       </form>
       <img

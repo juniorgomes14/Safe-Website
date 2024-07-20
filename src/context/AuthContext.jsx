@@ -1,12 +1,11 @@
 import {
-  createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import React, { createContext, useContext, useState, useEffect } from "react";
-import FireBaseAuth from "../firebase/firebaseConfig";
 import PropTypes from "prop-types";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import FireBaseAuth from "../firebase/firebaseConfig";
 
 export const AuthContext = createContext();
 
@@ -18,15 +17,19 @@ function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
-  const loginUser = (email, password) => {
-    setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
+  const loginUser = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(FireBaseAuth, email, password);
+      return true;
+    } catch (error) {
+      // console.error("Erro no login:", error);
+      return false;
+    }
   };
 
   const logOut = () => {
     setLoading(true);
-    return signOut(auth);
+    return signOut(FireBaseAuth);
   };
 
   useEffect(() => {
@@ -40,26 +43,7 @@ function AuthProvider({ children }) {
     };
   }, []);
 
-
-  // Função de login
-  async function loginAdmin(email, password) {
-    try {
-      const login = await signInWithEmailAndPassword(
-        FireBaseAuth,
-        email,
-        password
-      );
-      setUser(login.user);
-      const tokenUser = await login.user.getIdToken();
-      setToken(tokenUser);
-
-      return true;
-    } catch (error) {
-      console.error("Erro no login:", error);
-      return false;
-    }
-  }
-
+  
   const authValue = {
     user,
     loginUser,
@@ -67,7 +51,9 @@ function AuthProvider({ children }) {
     loading,
   };
 
-  return <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>
+  );
 }
 
 AuthProvider.propTypes = {
