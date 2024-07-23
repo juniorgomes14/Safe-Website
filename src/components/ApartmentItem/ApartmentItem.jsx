@@ -12,12 +12,13 @@ import {
 } from "react-icons/md";
 
 import toast from "react-hot-toast";
-import API, { parseAPIResponse } from "../../api/Api";
 import { TbMeterSquare } from "react-icons/tb";
+import API, { parseAPIResponse } from "../../api/Api";
 import { useAuth } from "../../context/AuthContext";
 
 import "./ApartmentItem.css";
-const ApartmentItem = ({ id, info, onUpdate }) => {
+
+const ApartmentItem = ({ id, info, onUpdate, canEdit }) => {
   const { user } = useAuth();
   const [imageIndex, setImageIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
@@ -31,11 +32,11 @@ const ApartmentItem = ({ id, info, onUpdate }) => {
     });
     toast.success("Apartamento foi apagado com sucesso");
     await parseAPIResponse(APIRequest);
-    onUpdate()
+    onUpdate();
   }
 
   async function ChangeStateSelf(state) {
-    const data = {saleStatus: state}
+    const data = { saleStatus: state };
     const queryLink = `apartment/${id}`;
     const APIRequest = API.put(queryLink, data, {
       headers: {
@@ -43,7 +44,7 @@ const ApartmentItem = ({ id, info, onUpdate }) => {
       },
     });
     await parseAPIResponse(APIRequest);
-    onUpdate()
+    onUpdate();
   }
 
   function RedirectToContact() {
@@ -120,28 +121,30 @@ const ApartmentItem = ({ id, info, onUpdate }) => {
         </div>
       )}
       <p className="sale-status">{info.saleStatus}</p>
-      <div className="apartment-item-actions">
-        <button type="button" onClick={DeleteSelf} title="Eliminar">
-          <MdDelete />
-        </button>
-        <button type="button" onClick={() => ChangeStateSelf("Vendido")}>
-          <MdOutlineAttachMoney title="Vender" />
-        </button>
-        <button
-          type="button"
-          title="Colocar a Venda"
-          onClick={() => ChangeStateSelf("Comprar")}
-        >
-          <MdMoneyOffCsred />
-        </button>
-        <button
-          type="button"
-          title="Colocar a Arrendar"
-          onClick={() => ChangeStateSelf("Arrendar")}
-        >
-          <IoKey />
-        </button>
-      </div>
+      {canEdit && (
+        <div className="apartment-item-actions">
+          <button type="button" onClick={DeleteSelf} title="Eliminar">
+            <MdDelete />
+          </button>
+          <button type="button" onClick={() => ChangeStateSelf("Vendido")}>
+            <MdOutlineAttachMoney title="Vender" />
+          </button>
+          <button
+            type="button"
+            title="Colocar a Venda"
+            onClick={() => ChangeStateSelf("Comprar")}
+          >
+            <MdMoneyOffCsred />
+          </button>
+          <button
+            type="button"
+            title="Colocar a Arrendar"
+            onClick={() => ChangeStateSelf("Arrendar")}
+          >
+            <IoKey />
+          </button>
+        </div>
+      )}
       <img
         className="apartment-image-viewer"
         src={info.images[imageIndex]}

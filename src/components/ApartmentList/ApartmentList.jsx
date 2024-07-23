@@ -1,15 +1,19 @@
 import ApartmentItem from "../ApartmentItem/ApartmentItem";
 import API, { parseAPIResponse } from "../../api/Api";
 import { CgSpinner } from "react-icons/cg";
+import { RiErrorWarningLine } from "react-icons/ri";
 
 import "./ApartmentList.css";
 import { useQuery } from "@tanstack/react-query";
 
-const ApartmentList = () => {
+const ApartmentList = ({ canEdit }) => {
   async function GetApartment() {
     const queryLink = "/apartment";
-    const APIRequest = API.get(queryLink);
-    return parseAPIResponse(APIRequest);
+    // const APIRequest = API.get(queryLink);
+    // return parseAPIResponse(APIRequest);
+    const response = await API.get(queryLink);
+    const responseData = await response.data;
+    return responseData;
   }
 
   const { data, error, isLoading, refetch } = useQuery({
@@ -17,21 +21,24 @@ const ApartmentList = () => {
     queryFn: GetApartment,
   });
 
-
   if (error) {
-    <div className="apartment-list">
-      <div className="items-list">
-        <p>Um error ocorreu</p>
+    return (
+      <div className="apartment-list">
+        <div className="items-list-center">
+          <p><RiErrorWarningLine /> Um error Inesperado ocorreu</p>
+        </div>
       </div>
-    </div>;
+    );
   }
 
   if (isLoading) {
-    <div className="apartment-list">
-      <div className="items-list">
-        <CgSpinner className=" spinner-icon loading-icon" />
+    return (
+      <div className="apartment-list">
+        <div className="items-list-center">
+          <CgSpinner className=" spinner-icon loading-icon" />
+        </div>
       </div>
-    </div>;
+    );
   }
 
   return (
@@ -44,6 +51,7 @@ const ApartmentList = () => {
               id={apartment.id}
               info={apartment.info}
               onUpdate={refetch}
+              canEdit={canEdit}
             />
           ))}
       </div>

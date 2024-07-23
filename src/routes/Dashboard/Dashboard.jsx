@@ -25,7 +25,7 @@ const Dashboard = () => {
       </div>
       <LinksManager />
       <AddApartmentSale />
-      <ApartmentList/>
+      <ApartmentList canEdit={true}/>
       <AddCarSales />
       <Toaster
         toastOptions={{

@@ -8,6 +8,9 @@ import "./index.css";
 import AdminLogin from "./routes/AdminLogin/AdminLogin.jsx";
 import Dashboard from "./routes/Dashboard/Dashboard.jsx";
 import Protected from "./routes/Protected/Protected.jsx";
+import Loading from "./routes/Loading/Loading.jsx";
+import NotFound from "./routes/NotFound/NotFound.jsx";
+import Apartments from "./routes/Apartment/Apartments.jsx";
 
 const queryClient = new QueryClient({});
 
@@ -18,6 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/apartamentos" element={<Apartments/>}/>
           <Route path="/admin" element={<AdminLogin />} />
           <Route
             path="/dashboard"
@@ -27,7 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </Protected>
             }
           />
-          <Route path="*" element={<h1>404</h1>} />
+          <Route path="*" element= {<NotFound/>}/>
         </Routes>
       </AuthProvider>
     </BrowserRouter>
