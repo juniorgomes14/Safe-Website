@@ -1,12 +1,17 @@
 import { useMutation } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { CgSpinner } from "react-icons/cg";
 import { FaSave } from "react-icons/fa";
 import API, { parseAPIResponse } from "../../api/Api";
+import { useAuth } from "../../context/AuthContext";
 import "./LinksManager.css";
 
+
 const LinksManager = () => {
+  const { user } = useAuth();
+
   async function GetCurrentLinks() {
     const APIRequest = API.get("/links");
     const APIResponse = await parseAPIResponse(APIRequest);
@@ -14,8 +19,11 @@ const LinksManager = () => {
   }
 
   async function UpdateCurrentLinks(data) {
-    //  add header de autorização
-    const APIRequest = API.post("/links", data);
+    const APIRequest = API.post("/links", data, {
+      headers: {
+        authorization: user.accessToken,
+      },
+    });
     const APIResponse = await parseAPIResponse(APIRequest);
     return APIResponse.data;
   }
@@ -34,14 +42,14 @@ const LinksManager = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: UpdateCurrentLinks,
     onSuccess: async () => {
-      console.log("guardado");
+      toast.success("Informações adicionadas com sucesso");
       const links = await GetCurrentLinks();
       if (links) {
         setDefaultValues(links);
       }
     },
     onError: async () => {
-      console.log("error ao guardar");
+      toast.error(`Ocorreu um erro inesperado ao guardar`);
     },
   });
 
