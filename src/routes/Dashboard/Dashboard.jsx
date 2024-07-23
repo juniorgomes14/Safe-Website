@@ -1,11 +1,12 @@
 import { Toaster } from "react-hot-toast";
 import { FaUserCircle } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
-import AddApartmentSale from "../../components/Add ApartmentSale/AddApartmentSale";
+import AddApartmentSale from "../../components/AddApartmentSale/AddApartmentSale";
 import AddCarSales from "../../components/AddCarSales/AddCarSales";
 import LinksManager from "../../components/LinksManager/LinksManager";
 import { useAuth } from "../../context/AuthContext";
 import "./Dashboard.css";
+import ApartmentList from "../../components/ApartmentList/ApartmentList";
 
 const Dashboard = () => {
   const { user, logOut } = useAuth();
@@ -24,6 +25,7 @@ const Dashboard = () => {
       </div>
       <LinksManager />
       <AddApartmentSale />
+      <ApartmentList/>
       <AddCarSales />
       <Toaster
         toastOptions={{

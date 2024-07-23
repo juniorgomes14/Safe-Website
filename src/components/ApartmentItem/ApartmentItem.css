@@ -1,0 +1,199 @@
+.apartment-item{
+    position: relative;
+    height: 18rem;
+    width: 100%;
+    overflow: hidden;
+}
+.more-info{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-gray-1);
+    color: var(--light-gray);
+    z-index: 4;
+    padding: 1rem;
+    display: flex;
+  
+    flex-direction: column;
+}
+.more-info-item{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .2rem;
+}
+.more-info-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.more-info-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--blue);
+    cursor: pointer;
+}
+.more-info-close svg{
+    width: 100%;
+    height: 100%;
+}
+
+.more-info-cta{
+    margin-top: auto;
+    height: 2.5rem;
+    color:var(--light-gray);
+    font-size: 1em;
+    font-weight: 600;
+    background-color: var(--blue);
+    height: 2.5rem;
+    border-radius: .2rem;
+    border: none;
+    transition: .5s;
+    outline: .2rem solid var(--blue);;
+    cursor: pointer;
+}
+.more-info-cta:hover{
+    background-color: transparent;
+}
+
+.sale-status{
+    background-color: rgba(0, 0, 0, 0.532);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .2rem;
+    border-radius: .2rem;
+    color: var(--light-gray);
+}
+
+.apartment-item-actions{
+    display: flex;
+    gap: .5rem;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translate(-50%);
+    transition: top 0.3s ease, opacity 0.3s ease;
+}
+.apartment-item-actions button{ 
+    background-color: var(--blue);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 2px 16px -3px rgba(0,0,0,0.74);
+    -moz-box-shadow: 2px 2px 16px -3px rgba(0,0,0,0.74);
+    box-shadow: 2px 2px 16px -3px rgba(0,0,0,0.74);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.apartment-item-actions svg{
+    width: 1.2rem;
+    height: 1.2rem;
+    color: var(--light-gray);
+}
+.apartment-item:hover .apartment-item-actions{
+    top: 1rem;
+}
+
+
+.left-arrow{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    left: -4rem;
+    width: 4rem;
+    height: 100%;
+    cursor: pointer;
+    transition: left 0.3s ease, opacity 0.3s ease;
+    background: rgb(255,255,255);
+    background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.768032212885154) 100%);
+}
+.right-arrow{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    right: -4rem;
+    width: 4rem;
+    height: 100%;
+    cursor: pointer;
+    transition: right 0.3s ease, opacity 0.3s ease;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.768032212885154) 100%);
+}
+.left-arrow svg, .right-arrow svg{
+    width: 2rem;
+    height: 2rem;
+    color: var(--light-gray);
+    transform: translate(0,-80%);
+}
+
+.apartment-item:hover .left-arrow{
+    left: 0;
+}
+.apartment-item:hover .right-arrow{
+    right: 0;
+}
+
+
+
+.apartment-image-viewer{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.apartment-info{
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    width: 100%;
+    color: var(--light-gray);
+    background-color: var(--dark-gray-1);
+    display: flex;
+    justify-content: center;
+    padding: .3rem;
+    flex-direction: column;
+}
+
+.apartment-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.apartment-price{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--blue);
+}
+.show-more-title{
+    cursor: pointer;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.apartment-item:hover .show-more-title{
+    color: var(--blue);
+}

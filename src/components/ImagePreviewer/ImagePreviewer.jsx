@@ -16,9 +16,9 @@ const ApartmentImage = ({ imageInfo, index, onDelete }) => {
   return (
     <div className="apartment-image">
       <div className="apartment-image-actions">
-        <button onClick={OnOpenSelf} type="button">
+        {/* <button onClick={OnOpenSelf} type="button">
           <MdOpenInNew />
-        </button>
+        </button> */}
         <button onClick={onDeleteSelf} type="button">
           <MdDelete />
         </button>
