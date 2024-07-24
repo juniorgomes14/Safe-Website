@@ -9,19 +9,16 @@ import { z } from "zod";
 import API, { parseAPIResponse } from "../../api/Api";
 import DropZone from "../DropZone/DropZone";
 import ImagePreviewer from "../ImagePreviewer/ImagePreviewer";
-import "./AddApartmentSale.css";
+import { useAuth } from "../../context/AuthContext";
+// import "./AddApartmentSale.css";
 import toast from "react-hot-toast";
 
-const ApartmentSchema = z.object({
-  title: z.string().min(5, "O campo deve ser prenchido"),
-  propertyType: z.string().min(5, "O campo deve ser prenchido"),
-  room: z.coerce.number().min(0, "O campo não pode ser negativo"),
-  bathroom: z.coerce.number().min(0, "O campo não pode ser negativo"),
-  yard: z.coerce.number().min(0, "O campo não pode ser negativo"),
-  garage: z.coerce.number().min(0, "O campo não pode ser negativo"),
-  squareMeters: z.coerce.number().min(0, "O campo não pode ser negativo"),
-  zone: z.string().min(5, "O campo deve ser prenchido"),
-  city: z.string().min(5, "O campo deve ser prenchido"),
+const CarSchema = z.object({
+  title: z.string().min(1, "O campo deve ser prenchido"),
+  brand: z.string().min(1, "O campo deve ser prenchido"),
+  yearOfManufacture: z.coerce.number().min(0, "O campo não pode ser negativo"),
+  mileage: z.coerce.number().min(0, "O campo não pode ser negativo"),
+  fuelType: z.string().min(5, "O campo deve ser prenchido"),
   island: z.string().min(5, "O campo deve ser prenchido"),
   price: z.coerce.number().min(0, "O campo não pode ser negativo"),
   saleStatus: z.string().min(5, "O campo deve ser prenchido"),
@@ -42,7 +39,9 @@ async function CompressImages(images) {
   return compressList;
 }
 
-const AddApartmentSale = () => {
+const AddCarSales = () => {
+  const { user } = useAuth();
+
   async function UploadImages(images, docId) {
     const formData = new FormData();
 
@@ -50,19 +49,22 @@ const AddApartmentSale = () => {
       formData.append(`images`, image);
     });
 
-    const APIRequest = API.post(`/apartment/upload/${docId}`, formData, {
+    const APIRequest = API.post(`/car/upload/${docId}`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
+        authorization: user.accessToken,
       },
     });
     const APIResponse = await parseAPIResponse(APIRequest);
     return APIResponse;
   }
 
-  async function PostNewApp(data) {
-    //  add header de autorização
-
-    const APIRequest = API.post("/apartment", data);
+  async function PostNewCar(data) {
+    const APIRequest = API.post("/car", data, {
+      headers: {
+        authorization: user.accessToken,
+      },
+    });
     const APIResponse = await parseAPIResponse(APIRequest);
     return APIResponse.id;
   }
@@ -72,7 +74,7 @@ const AddApartmentSale = () => {
   }
 
   const { mutate, isPending } = useMutation({
-    mutationFn: PostNewApp,
+    mutationFn: PostNewCar,
     onSuccess: async (docId) => {
       toast.success("Informações adicionadas com sucesso");
       const toastId = toast.loading("Otimizando e Carregando imagens …");
@@ -84,7 +86,7 @@ const AddApartmentSale = () => {
       toast.success("Imagens foram carregadas com sucesso");
     },
     onError: async (error) => {
-      console.log(error); 
+      console.log(error);
       toast.error(`Ocorreu um erro inesperado ao adicionar`);
     },
   });
@@ -95,7 +97,11 @@ const AddApartmentSale = () => {
     reset,
     formState: { errors },
   } = useForm({
-    resolver: zodResolver(ApartmentSchema),
+    resolver: zodResolver(CarSchema),
+    defaultValues:{
+      saleStatus:"Comprar",
+      fuelType:"Gasolina"
+    }
   });
 
   const [images, setImages] = useState([]);
@@ -106,9 +112,9 @@ const AddApartmentSale = () => {
 
   return (
     <div className="add-apartment-container">
-      <h2 className="manager-title">Gerenciador de Apartamentos</h2>
+      <h2 className="manager-title">Gerenciador de Carros</h2>
       <form
-        id="apartment-form"
+        id="car-form"
         className="add-form-container"
         onSubmit={handleSubmit(onAddApp)}
       >
@@ -133,64 +139,43 @@ const AddApartmentSale = () => {
               </span>
             )}
           </label>
-          <label htmlFor="type" className="dashboard-label">
-            Tipo de Propriedade
-            <select
-              {...register("propertyType")}
-              htmlFor="propertyType"
-              className="dashboard-input"
-              defaultValue={"Apartamento"}
-            >
-              <option value="Apartamento">Apartamento</option>
-              <option value="Duplex">Duplex</option>
-              <option value="Tríplex">Tríplex</option>
-              <option value="Vivenda">Vivenda</option>
-              <option value="Kitnet">Kitnet</option>
-            </select>
-            {errors.type && (
-              <span className="dashboard-error-message">
-                {errors.type.message}
-              </span>
-            )}
-          </label>
-          <label htmlFor="room" className="dashboard-label">
-            Quartos
+          <label htmlFor="brand" className="dashboard-label">
+            Marca
             <input
-              type="number"
-              htmlFor="room"
-              min={0}
+              type="text"
+              htmlFor="brand"
               className="dashboard-input"
-              {...register("room")}
+              {...register("brand")}
             />
-            {errors.room && (
+            {errors.brand && (
               <span className="dashboard-error-message">
-                {errors.room.message}
+                {errors.brand.message}
               </span>
             )}
           </label>
-          <label htmlFor="bathroom" className="dashboard-label">
-            Casa de banho
+          <label htmlFor="yearOfManufacture" className="dashboard-label">
+            Ano de Fabrico
             <input
               type="number"
               min={0}
-              htmlFor="bathroom"
+              htmlFor="yearOfManufacture"
               className="dashboard-input"
-              {...register("bathroom")}
+              {...register("yearOfManufacture")}
             />
-            {errors.bathroom && (
+            {errors.yearOfManufacture && (
               <span className="dashboard-error-message">
-                {errors.bathroom.message}
+                {errors.yearOfManufacture.message}
               </span>
             )}
           </label>
-          <label htmlFor="yard" className="dashboard-label">
-            Quintal
+          <label htmlFor="mileage" className="dashboard-label">
+            Quilometragem
             <input
               type="number"
               min={0}
-              htmlFor="yard"
+              htmlFor="mileage"
               className="dashboard-input"
-              {...register("yard")}
+              {...register("mileage")}
             />
             {errors.yard && (
               <span className="dashboard-error-message">
@@ -198,56 +183,20 @@ const AddApartmentSale = () => {
               </span>
             )}
           </label>
-          <label htmlFor="garage" className="dashboard-label">
-            Caragem
-            <input
-              type="number"
-              htmlFor="garage"
-              min={0}
+          <label htmlFor="fuelType" className="dashboard-label">
+            Tipo de Combustivel
+            <select
+              {...register("fuelType")}
+              htmlFor="fuelType"
               className="dashboard-input"
-              {...register("garage")}
-            />
-            {errors.garage && (
+              defaultValue={"Gasolina"}
+            >
+              <option value="Gasolina">Gasolina</option>
+              <option value="Gasóleo">Gasóleo</option>
+            </select>
+            {errors.fuelType && (
               <span className="dashboard-error-message">
-                {errors.garage.message}
-              </span>
-            )}
-          </label>
-          <label htmlFor="squareMeters" className="dashboard-label">
-            Metros Quadrados
-            <input
-              type="number"
-              min={0}
-              htmlFor="squareMeters"
-              className="dashboard-input"
-              {...register("squareMeters")}
-            />
-            {errors.squareMeters && (
-              <span className="dashboard-error-message">
-                {errors.squareMeters.message}
-              </span>
-            )}
-          </label>
-          <label htmlFor="zone" className="dashboard-label">
-            Zona
-            <input
-              type="text"
-              htmlFor="zone"
-              className="dashboard-input"
-              {...register("zone")}
-            />
-          </label>
-          <label htmlFor="city" className="dashboard-label">
-            Cidade
-            <input
-              type="text"
-              className="dashboard-input"
-              htmlFor="city"
-              {...register("city")}
-            />
-            {errors.city && (
-              <span className="dashboard-error-message">
-                {errors.city.message}
+                {errors.fuelType.message}
               </span>
             )}
           </label>
@@ -282,15 +231,9 @@ const AddApartmentSale = () => {
           </label>
           <label htmlFor="saleStatus" className="dashboard-label">
             Status da Venda
-            {/* <input
-              type="text"
-              htmlFor="saleStatus"
-              className="dashboard-input"
-              {...register("saleStatus")}
-            /> */}
             <select
               {...register("saleStatus")}
-              htmlFor="propertyType"
+              htmlFor="saleStatus"
               className="dashboard-input"
               defaultValue={"Comprar"}
             >
@@ -306,7 +249,7 @@ const AddApartmentSale = () => {
           </label>
         </div>
       </form>
-      <button type="summit" form="apartment-form" className="dashboard-button">
+      <button type="summit" form="car-form" className="dashboard-button">
         Adicionar{" "}
         {isPending ? (
           <CgSpinner className="dashboard-button-icon spinner-icon" />
@@ -318,4 +261,4 @@ const AddApartmentSale = () => {
   );
 };
 
-export default AddApartmentSale;
+export default AddCarSales;

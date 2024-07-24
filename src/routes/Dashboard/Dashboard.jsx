@@ -7,6 +7,7 @@ import LinksManager from "../../components/LinksManager/LinksManager";
 import { useAuth } from "../../context/AuthContext";
 import "./Dashboard.css";
 import ApartmentList from "../../components/ApartmentList/ApartmentList";
+import CarList from "../../components/CarList/CarList";
 
 const Dashboard = () => {
   const { user, logOut } = useAuth();
@@ -27,6 +28,7 @@ const Dashboard = () => {
       <AddApartmentSale />
       <ApartmentList canEdit={true}/>
       <AddCarSales />
+      <CarList canEdit={true} />
       <Toaster
         toastOptions={{
           style: {

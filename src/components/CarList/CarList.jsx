@@ -2,20 +2,20 @@ import { useQuery } from "@tanstack/react-query";
 import { CgSpinner } from "react-icons/cg";
 import { RiErrorWarningLine } from "react-icons/ri";
 import API from "../../api/Api";
-import ApartmentItem from "../ApartmentItem/ApartmentItem";
-import "./ApartmentList.css";
+import CarItem from "../CarItem/CarItem";
+import "./CarList.css";
 
-const ApartmentList = ({ canEdit }) => {
-  async function GetApartment() {
-    const queryLink = "/apartment";
+const CarList = ({ canEdit }) => {
+  async function GetCar() {
+    const queryLink = "/car";
     const response = await API.get(queryLink);
     const responseData = await response.data;
     return responseData;
   }
 
   const { data, error, isLoading, refetch } = useQuery({
-    queryKey: ["app"],
-    queryFn: GetApartment,
+    queryKey: ["car"],
+    queryFn: GetCar,
   });
 
   if (error) {
@@ -43,7 +43,7 @@ const ApartmentList = ({ canEdit }) => {
       <div className="items-list">
         {data &&
           data.map((apartment) => (
-            <ApartmentItem
+            <CarItem
               key={apartment.id}
               id={apartment.id}
               info={apartment.info}
@@ -56,4 +56,4 @@ const ApartmentList = ({ canEdit }) => {
   );
 };
 
-export default ApartmentList;
+export default CarList;
