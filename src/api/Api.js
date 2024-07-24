@@ -1,6 +1,6 @@
 import axios from "axios";
-const baseURL = "http://localhost:3001";
-// const baseURL = "http://192.168.1.6:3001"
+// const baseURL = "http://localhost:3001";
+const baseURL = "https://safe-api.onrender.com"
 
 const API = axios.create({ baseURL: baseURL });
 export default API;
