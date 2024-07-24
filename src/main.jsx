@@ -11,6 +11,7 @@ import Protected from "./routes/Protected/Protected.jsx";
 import Loading from "./routes/Loading/Loading.jsx";
 import NotFound from "./routes/NotFound/NotFound.jsx";
 import Apartments from "./routes/Apartment/Apartments.jsx";
+import Cars from "./routes/Cars/Cars.jsx";
 
 const queryClient = new QueryClient({});
 
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/apartamentos" element={<Apartments/>}/>
+          <Route path="/carros" element={<Cars/>}/>
           <Route path="/admin" element={<AdminLogin />} />
           <Route
             path="/dashboard"
