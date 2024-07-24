@@ -1,0 +1,10 @@
+.apartments-container{
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 3rem;
+}

@@ -1,0 +1,128 @@
+
+.dashboard-container{
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 3rem;
+}
+
+.dashboard-header{
+    width: 100%;
+    display: flex;
+    color: var(--light-gray);
+justify-content: space-between;
+}
+
+.username{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.user-icon{
+    width: 2rem;
+    height: 2rem;
+}
+
+.logout-icon{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.logout-btn{
+    position: relative;
+    color:var(--light-gray);
+    background-color: transparent;
+    border: none;
+    transition: .5s;
+    cursor: pointer;
+    padding-left: .5rem;
+}
+.logout-btn:hover{
+    color: var(--blue);
+}
+
+.manager-title{
+    color: var(--blue);
+    font-size: 2em;
+}
+.dashboard-label{
+    display: flex;
+    flex-direction: column;
+    color: var(--light-gray);
+    flex: 1 1 49%; 
+    max-height: 4rem;
+}
+
+.dashboard-input{
+    height: 2.5rem;
+    background-color: var(--dark-gray-1);
+    outline: none;
+    border:none ;
+    border-radius: .2rem;
+    font-size:var(--text-size);
+    padding: 0 .6rem;
+    color: var(--light-gray);
+}
+
+.dashboard-button{
+    position: relative;
+    color:var(--light-gray);
+    font-size: 1em;
+    font-weight: 600;
+    width: 10rem;
+    background-color: var(--blue);
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: none;
+    transition: .5s;
+    outline: .2rem solid var(--blue);;
+    cursor: pointer;
+    text-align: left;
+    padding-left: .5rem;
+}
+
+.dashboard-button:hover{
+    background-color: transparent;
+}
+.dashboard-button-icon{
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    top: 50%;
+    right: .5rem;
+    transform: translate(0,-50%);
+}
+
+.dashboard-error-message{
+    color: rgb(255, 76, 76);
+    font-size: .7em;
+}
+
+@media screen and (max-width: 900px){
+    .dashboard-container{
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .dashboard-container{
+        padding: 1rem;
+    }
+    .manager-title{
+        font-size: 1.9em;
+    }
+    .dashboard-input{
+        height: 2.2rem;
+    }
+
+    .dashboard-button{
+        height: 2.2rem;
+    }
+
+}
