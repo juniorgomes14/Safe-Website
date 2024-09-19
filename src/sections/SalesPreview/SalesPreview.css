@@ -1,0 +1,40 @@
+#sales{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem 15rem;
+}
+
+.cta-sales-preview{
+    color:var(--light-gray);
+    font-size: 1em;
+    font-weight: 600;
+    width: 12rem;
+    background-color: var(--blue);
+    height: 3rem;
+    border-radius: 2rem;
+    border: none;
+    transition: .5s;
+    outline: .2rem solid var(--blue);;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.cta-sales-preview:hover{
+    background-color: transparent;
+}
+
+
+@media screen and (max-width: 900px){
+    #sales{
+        padding: 2rem 2rem;
+    }
+}
+
+/* @media screen and (max-width: 600px){
+  
+} */
+

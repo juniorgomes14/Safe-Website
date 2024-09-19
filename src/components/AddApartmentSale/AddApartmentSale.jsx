@@ -21,7 +21,7 @@ const ApartmentSchema = z.object({
   bathroom: z.coerce.number().min(0, "O campo não pode ser negativo"),
   yard: z.coerce.number().min(0, "O campo não pode ser negativo"),
   garage: z.coerce.number().min(0, "O campo não pode ser negativo"),
-  squareMeters: z.coerce.number().min(0, "O campo não pode ser negativo"),
+  squareMeters: z.coerce.number().min(1, "O campo deve ser maior que 1"),
   zone: z.string().min(5, "O campo deve ser prenchido"),
   city: z.string().min(5, "O campo deve ser prenchido"),
   island: z.string().min(5, "O campo deve ser prenchido"),
@@ -151,6 +151,7 @@ const AddApartmentSale = () => {
               className="dashboard-input"
             >
               <option value="Apartamento">Apartamento</option>
+              <option value="Terreno">Terreno</option>
               <option value="Duplex">Duplex</option>
               <option value="Tríplex">Tríplex</option>
               <option value="Vivenda">Vivenda</option>
@@ -158,7 +159,7 @@ const AddApartmentSale = () => {
             </select>
             {errors.type && (
               <span className="dashboard-error-message">
-                {errors.type.message}
+                {errors.propertyType.message}
               </span>
             )}
           </label>
@@ -167,7 +168,6 @@ const AddApartmentSale = () => {
             <input
               type="number"
               htmlFor="room"
-              min={0}
               defaultValue={0}
               className="dashboard-input"
               {...register("room")}
@@ -211,7 +211,7 @@ const AddApartmentSale = () => {
             )}
           </label>
           <label htmlFor="garage" className="dashboard-label">
-            Caragem
+            Garagem
             <input
               type="number"
               htmlFor="garage"
@@ -230,8 +230,6 @@ const AddApartmentSale = () => {
             Metros Quadrados
             <input
               type="number"
-              min={0}
-              defaultValue={0}
               htmlFor="squareMeters"
               className="dashboard-input"
               {...register("squareMeters")}
@@ -249,7 +247,13 @@ const AddApartmentSale = () => {
               htmlFor="zone"
               className="dashboard-input"
               {...register("zone")}
+              
             />
+            {errors.zone && (
+              <span className="dashboard-error-message">
+                {errors.zone.message}
+              </span>
+            )}
           </label>
           <label htmlFor="city" className="dashboard-label">
             Cidade

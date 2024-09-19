@@ -26,6 +26,9 @@
 
 
 @media screen and (max-width: 900px){
+    .apartment-list{
+        warp:warp
+    }
     .items-list{
         display: grid;
         grid-template-columns: repeat(2, 1fr);

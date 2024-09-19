@@ -6,6 +6,8 @@ import FAQ from "./sections/FAQ/FAQ";
 import Footer from "./sections/Footer/Footer";
 import Landing from "./sections/Landing/Landing";
 import Services from "./sections/Services/Services";
+import ApartmentList from "./components/ApartmentList/ApartmentList";
+import SalesPreview from "./sections/SalesPreview/SalesPreview";
 
 {
   /* <Comments /> */
@@ -16,6 +18,7 @@ function App() {;
       <Landing />
       <Services />
       <CallToAction />
+      <SalesPreview/>
       <About />
       <FAQ />
       <Footer />
