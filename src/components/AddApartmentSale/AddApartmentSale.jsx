@@ -211,7 +211,7 @@ const AddApartmentSale = () => {
             )}
           </label>
           <label htmlFor="garage" className="dashboard-label">
-            Caragem
+            Garagem
             <input
               type="number"
               htmlFor="garage"
