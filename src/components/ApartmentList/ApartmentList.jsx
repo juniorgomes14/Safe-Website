@@ -5,11 +5,15 @@ import API from "../../api/Api";
 import ApartmentItem from "../ApartmentItem/ApartmentItem";
 import "./ApartmentList.css";
 
-const ApartmentList = ({ canEdit }) => {
+const ApartmentList = ({ canEdit, length }) => {
   async function GetApartment() {
     const queryLink = "/apartment";
     const response = await API.get(queryLink);
     const responseData = await response.data;
+    if (length && responseData.length > length) {
+      return responseData.slice(0, length);
+    }
+
     return responseData;
   }
 
@@ -22,7 +26,9 @@ const ApartmentList = ({ canEdit }) => {
     return (
       <div className="apartment-list">
         <div className="items-list-center">
-          <p><RiErrorWarningLine /> Um error Inesperado ocorreu</p>
+          <p>
+            <RiErrorWarningLine /> Um error Inesperado ocorreu
+          </p>
         </div>
       </div>
     );
@@ -41,7 +47,7 @@ const ApartmentList = ({ canEdit }) => {
   return (
     <div className="apartment-list">
       <div className="items-list">
-        {data &&
+        {data && data.length > 0 ? (
           data.map((apartment) => (
             <ApartmentItem
               key={apartment.id}
@@ -50,7 +56,12 @@ const ApartmentList = ({ canEdit }) => {
               onUpdate={refetch}
               canEdit={canEdit}
             />
-          ))}
+          ))
+        ) : (
+          <div className="items-list-center">
+            <p> Nenhum apartamento encontrado.</p>
+          </div>
+        )}
       </div>
     </div>
   );
