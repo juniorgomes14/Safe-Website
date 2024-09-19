@@ -151,6 +151,7 @@ const AddApartmentSale = () => {
               className="dashboard-input"
             >
               <option value="Apartamento">Apartamento</option>
+              <option value="Terreno">Terreno</option>
               <option value="Duplex">Duplex</option>
               <option value="Tríplex">Tríplex</option>
               <option value="Vivenda">Vivenda</option>
