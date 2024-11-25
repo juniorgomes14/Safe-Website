@@ -7,12 +7,12 @@ import toast from "react-hot-toast";
 function getErrorMessage(code, filename) {
   console.log(code)
   if (code === "file-invalid-type")
-    return `O ficheiro ${filename} foi  regeitado, é aceito apenas imagens jpg, png e webp `;
+    return `O ficheiro ${filename} foi  rejeitado, é aceito apenas imagens jpg, png e webp `;
 
   if (code === "file-too-large")
-    return `O ficheiro ${filename} foi  regeitado, ficheiro é maior que 5 mega bytes`;
+    return `O ficheiro ${filename} foi  rejeitado, ficheiro é maior que 5 mega bytes`;
 
-  return `O ficheiro ${filename} foi  regeitado.`;
+  return `O ficheiro ${filename} foi  rejeitado.`;
 }
 
 const DropZone = ({ files, onChangeFiles }) => {
